@@ -1,0 +1,14 @@
+
+name: Environment Specific Values
+
+on: workflow_dispatch
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    environment: development
+    steps:
+      - name: Display Environment
+        run: echo "Environment is $APP_MODE"
+        env:
+          APP_MODE: ${{ vars.APP_MODE }}
